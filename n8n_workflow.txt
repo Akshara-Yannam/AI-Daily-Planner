@@ -1,0 +1,156 @@
+==============================
+n8n Workflow Documentation
+AI Daily Planner Project
+==============================
+
+1. Introduction
+---------------
+n8n is a workflow automation tool used to connect different services and automate processes.
+In this project, n8n is used as the backend engine to process user input and interact with AI (Groq API).
+
+--------------------------------------------------
+
+2. Purpose of n8n in this Project
+--------------------------------
+- Receives user input from the website
+- Processes tasks using AI
+- Generates:
+  - Structured schedule
+  - Productivity tips
+- Sends output back to the frontend
+
+--------------------------------------------------
+
+3. Workflow Overview
+-------------------
+
+User Input → Webhook → Task Extraction → Scheduling → Tips Generation → Final Output
+
+--------------------------------------------------
+
+4. Nodes Used in Workflow
+------------------------
+
+1. Webhook Node
+   - Entry point of workflow
+   - Receives user tasks from frontend
+
+2. HTTP Request (Task Extractor)
+   - Calls Groq AI API
+   - Extracts tasks from raw input
+
+3. Code Node (Parse Tasks)
+   - Cleans and converts AI response into JSON array
+
+4. HTTP Request (Scheduler)
+   - Generates time-based schedule using AI
+
+5. Code Node (Save Schedule)
+   - Stores schedule data for next steps
+
+6. HTTP Request (Coach)
+   - Generates productivity tips using AI
+
+7. Code Node (Final Formatter)
+   - Combines schedule and tips into final output
+
+8. Respond to Webhook Node
+   - Sends processed data back to website
+
+--------------------------------------------------
+
+5. Workflow Design Approach
+--------------------------
+
+Sequential Flow Used:
+
+Webhook
+  ↓
+Task Extractor
+  ↓
+Parse Tasks
+  ↓
+Scheduler
+  ↓
+Save Schedule
+  ↓
+Coach
+  ↓
+Final Formatter
+  ↓
+Respond to Webhook
+
+Reason:
+- Avoids issues with parallel execution
+- Ensures proper data flow
+- Prevents missing data (N/A errors)
+
+--------------------------------------------------
+
+6. API Integration
+-----------------
+
+Groq API is used for:
+- Task extraction
+- Schedule generation
+- Productivity tips
+
+Model used:
+llama-3.3-70b-versatile
+
+--------------------------------------------------
+
+7. Common Issues Faced
+---------------------
+
+1. Merge Node Issues
+   - Data not combining properly
+   - Solution: Removed parallel flow
+
+2. JSON Errors
+   - Invalid JSON formatting
+   - Solution: Used proper syntax and avoided line breaks
+
+3. Data Not Passing Between Nodes
+   - Cause: Incorrect connections
+   - Solution: Sequential workflow design
+
+4. AI Output Format Issues
+   - AI returned text instead of JSON
+   - Solution: Used strict prompts
+
+--------------------------------------------------
+
+8. Key Learnings
+----------------
+
+- n8n does not handle parallel flows reliably without proper configuration
+- Sequential workflows are more stable
+- JSON formatting must be strict
+- AI responses must be controlled using prompts
+
+--------------------------------------------------
+
+9. How to Run n8n
+----------------
+
+1. Install n8n:
+   npm install -g n8n
+
+2. Start n8n:
+   n8n start
+
+3. Open:
+   http://localhost:5678
+
+4. Create and activate workflow
+
+--------------------------------------------------
+
+10. Conclusion
+--------------
+
+n8n acts as the backbone of this project by automating the entire AI workflow.
+It efficiently connects frontend input with AI processing and delivers structured output.
+
+--------------------------------------------------
