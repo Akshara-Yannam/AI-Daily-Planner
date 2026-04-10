@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Daily Planner</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">🧠 DayMind</div>
+      <p class="tagline">Your AI Productivity Coach</p>
+    </header>
+
+    <main>
+      <section class="input-section">
+        <label for="taskInput">What do you need to do today?</label>
+        <textarea
+          id="taskInput"
+          placeholder="e.g. Team meeting at 10am, finish report, gym session, reply emails, lunch with client at 1pm..."
+          rows="5"
+        ></textarea>
+        <button id="planBtn" onclick="generatePlan()">
+          <span id="btnText">✨ Generate My Day Plan</span>
+          <div class="spinner" id="spinner" style="display:none;"></div>
+        </button>
+      </section>
+
+      <section class="output-section" id="outputSection" style="display:none;">
+        <div class="output-card">
+          <h2>📅 Your Schedule</h2>
+          <div id="scheduleContent"></div>
+        </div>
+        <div class="output-card">
+          <h2>💡 Coach's Tips</h2>
+          <div id="tipsContent"></div>
+        </div>
+      </section>
+
+      <div class="error-msg" id="errorMsg" style="display:none;">
+        ⚠️ Something went wrong. Make sure n8n is running!
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
