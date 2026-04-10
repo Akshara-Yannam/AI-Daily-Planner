@@ -189,7 +189,13 @@ http://localhost:5678
   <img width="1721" height="506" alt="image" src="https://github.com/user-attachments/assets/0936eeb6-3790-4448-a393-1a3ffa5b8325" />
 
 * Output Schedule
+  <img width="1745" height="738" alt="image" src="https://github.com/user-attachments/assets/9bf6b902-ee9d-4957-b068-68dae00dc345" />
+  <img width="1182" height="766" alt="image" src="https://github.com/user-attachments/assets/a6228557-df50-4506-bccd-0af7258fb725" />
+  <img width="1157" height="599" alt="image" src="https://github.com/user-attachments/assets/109f97d1-d255-49f6-a80f-764a4a333298" />
 
+
+
+ 
 ---
 
 ##  10. Problems Faced & Solutions
