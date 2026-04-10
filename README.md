@@ -279,13 +279,6 @@ http://localhost:5678
 
 ---
 
-##  13. Repository Links
-
-* Code Repo: [GitHub Link]
-* Demo Video: [Link]
-* Workflow Export: [Link]
-
----
 
 ##  Conclusion
 
